@@ -7,7 +7,7 @@
             <img
               class="fila-0"
               :src="imagenCero"
-              alt="QUE PASA NOTICIAS || NEWS BARRANQUILLA, ATLANTICO, CARTAGENA, BOLIVAR, CARIBE, COLOMBIA Y EL MUNDO NEWS |"
+              alt="QUE PASA NOTICIAS || NEWS BARRANQUILLA, ATLANTICO, CARTAGENA, BOLIVAR, CARIBE, COLOMBIA Y EL MUNDO NEWS "
             />
             <h1 class="primicia-titulo">{{ primicia.titulo }}</h1>
           </NuxtLink>
