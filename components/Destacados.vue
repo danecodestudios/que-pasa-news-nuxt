@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12 col-md-7 col-lg-8 col-xl-8">
-          <NuxtLink :to="'/noticias/' + id">
+          <NuxtLink :to="'/noticias/' ">
             <img
               class="fila-0"
               :src="imagenCero"
@@ -15,7 +15,7 @@
 
         <div class="col-12 col-md-5 col-lg-4 col-xl-4">
           <div class="row">
-            <NuxtLink :to="'/noticias/' + id">
+            <NuxtLink :to="'/noticias/' ">
               <img
                 class="fila-1"
                 :src="imagenUno"
@@ -28,7 +28,7 @@
           </div>
 
           <div class="row">
-            <NuxtLink :to="'/noticias/' + id">
+            <NuxtLink :to="'/noticias/' ">
               <img
                 class="fila-2"
                 :src="imagenDos"
