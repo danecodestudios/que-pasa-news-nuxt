@@ -66,11 +66,12 @@ export default {
 <style scoped="true" lang="css">
 @import url("https://fonts.googleapis.com/css2?family=Bitter:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 
 
 .title {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
   font-size: 40px;
   font-weight: 900;
   margin-bottom: 50px;
@@ -85,7 +86,7 @@ export default {
   border-radius: 13px;
   position: relative;
   bottom: 70px;
-box-shadow: -8px 4px 17px 6px rgba(193, 193, 193, 0.082);
+  box-shadow: -8px 4px 17px 6px rgba(193, 193, 193, 0.082);
 }
 .blog-post {
   margin-top: 100px;

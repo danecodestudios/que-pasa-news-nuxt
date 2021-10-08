@@ -1,29 +1,34 @@
 <template>
   <div>
-
     <div>
       <Nav />
     </div>
-    <div>
-      <Destacados />
+
+    <div class="main-content">
+      <Nuxt />
     </div>
 
     <div>
-      <Noticias />
+      <Footer />
     </div>
   </div>
 </template>
 
 <script>
-import Noticias from '@/pages/noticias/index.vue'
-import Destacados from '@/components/Destacados.vue'
+import Footer from '@/components/Footer.vue'
 import Nav from '@/components/Nav.vue'
 export default {
   components: {
-    Noticias,
-    Destacados,
-    Nav
+    Footer,
+    Nav,
   },
 }
 </script>
 
+
+<style>
+.main-content {
+  min-height: 100vh;
+  margin-top: 100px;
+}
+</style>
