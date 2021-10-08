@@ -104,6 +104,8 @@ export default {
   color: white;
   padding: 5px 20px;
   border-radius: 5px;
+   font-family: 'Lato', sans-serif;
+   font-weight: 400;
 }
 /* MEDIDA CELULAR PEQUEÑO (XS)  */
 @media screen and (min-width: 240px) and (max-width: 575.98px) {
