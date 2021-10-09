@@ -30,6 +30,14 @@ import moment from 'moment'
 require('moment/locale/es-mx')
 
 export default {
+head(){
+  return{
+
+    title: " Que Pasa News || Colombia Noticias "
+
+  }
+},
+
   components: {
     Post,
   },

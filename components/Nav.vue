@@ -484,12 +484,16 @@ export default {
     return {
       current: {},
       index: 0,
-    //   audio : useState(typeof Audio !== "undefined" && new Audio("http://stream.zeno.fm/5m7yn6bxe48uv")),
+    audio : "",
       pausa: false,
     }
   },
   methods: {
     sonido() {
+
+      if (process.server) {
+            this.audio = useState(typeof Audio !== "undefined" && new Audio("http://stream.zeno.fm/5m7yn6bxe48uv"));
+}
       if (this.pausa == false) {
         this.player.play()
         this.pausa = true

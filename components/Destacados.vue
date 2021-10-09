@@ -22,7 +22,7 @@
                 alt="QUE PASA NOTICIAS || NEWS BARRANQUILLA, ATLANTICO, CARTAGENA, BOLIVAR, CARIBE, COLOMBIA Y EL MUNDO NEWS"
               />
               <div class="primicias-titulo">
-                <h1 class="prim-titulo-1">{{ primicias.titulo }}</h1>
+                <h1 class="prim-titulo-1">{{ primiciasUno.titulo }}</h1>
               </div>
             </NuxtLink>
           </div>
@@ -34,8 +34,9 @@
                 :src="imagenDos"
                 alt="QUE PASA NOTICIAS || NEWS BARRANQUILLA, ATLANTICO, CARTAGENA, BOLIVAR, CARIBE, COLOMBIA Y EL MUNDO NEWS"
               />
+              <span>{{primiciasDos.categoria}}</span>
               <div class="primicias-titulo">
-                <h1 class="prim-titulo-2">{{ primicias.titulo }}</h1>
+                <h1 class="prim-titulo-2">{{ primiciasDos.titulo }}</h1>
               </div>
             </NuxtLink>
           </div>
@@ -646,7 +647,8 @@ export default {
   data() {
     return {
       primicia: {},
-      primicias: {},
+      primiciasUno:{},
+      primiciasDos:{},
       imagenCero: {},
       imagenUno: {},
       imagenDos: {},
@@ -660,7 +662,8 @@ export default {
         'https://que-pasa-strapi.herokuapp.com/primicias'
       )
       this.primicia = res.data.destacado
-      this.primicias = res.data.destacados[0]
+      this.primiciasUno = res.data.destacados[0]
+      this.primiciasDos = res.data.destacados[1]
       this.imagenCero = res.data.destacado.imagen[0].url
       this.imagenUno = res.data.destacados[0].imagen[0].url
       this.imagenDos = res.data.destacados[1].imagen[0].url

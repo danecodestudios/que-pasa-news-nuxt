@@ -1,5 +1,5 @@
 <template>
-     <div class="blog-post bb">
+  <div class="blog-post bb">
     <div class="container imagen-caja">
       <div class="row">
         <div class="col-md-2"></div>
@@ -32,26 +32,42 @@
   </div>
 </template>
 <script>
-
 import axios from 'axios'
 import moment from 'moment'
-import marked from "marked";
+import marked from 'marked'
 require('moment/locale/es-mx')
 
 export default {
+  head() {
+    return {
+      title: this.posts.titulo,
+      meta:[
+        {
+          hid:this.contenido,
+          name :this.contenido,
+          content:this.categoria 
+        }
+      ]
+    }
+  },
+
+
   data() {
     return {
       posts: {},
-      contenido :{},
-      imagen : {},
-      categoria : {},
+      contenido: {},
+      imagen: {},
+      categoria: {},
       moment: moment,
     }
   },
 
   async mounted() {
     try {
-      const res = await axios.get('https://que-pasa-strapi.herokuapp.com/noticias/' + this.$route.params.id)
+      const res = await axios.get(
+        'https://que-pasa-strapi.herokuapp.com/noticias/' +
+          this.$route.params.id
+      )
       this.posts = res.data
       this.contenido = marked(res.data.descripcion)
       this.imagen = res.data.imagen[0].url
@@ -64,11 +80,9 @@ export default {
 </script>
 
 <style scoped="true" lang="css">
-@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
-
 
 .title {
   font-family: 'Merriweather Sans', sans-serif;
@@ -104,8 +118,8 @@ export default {
   color: white;
   padding: 5px 20px;
   border-radius: 5px;
-   font-family: 'Lato', sans-serif;
-   font-weight: 400;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 400;
 }
 /* MEDIDA CELULAR PEQUEÑO (XS)  */
 @media screen and (min-width: 240px) and (max-width: 575.98px) {
