@@ -38,8 +38,8 @@ import marked from 'marked'
 require('moment/locale/es-mx')
 
 export default {
-  head() {
-    return {
+  head: {
+   
       title: this.posts.titulo,
       meta:[
         {
@@ -75,7 +75,7 @@ export default {
       },
         
       ]
-    }
+ 
   },
 
 
