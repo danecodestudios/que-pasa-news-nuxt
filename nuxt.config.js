@@ -1,19 +1,15 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'que-pasa-news',
+    title: '%s | Que Pasa News',
     htmlAttrs: {
       lang: 'es'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'La pagina de mayor contenido en colombia' },
-      {
-        hid: 'og:title',
-        property: 'og:title',
-        content: 'Este es una prueba del titulo'
-      },
+      { hid: 'og:description', name: 'og:description', content: '%s' },
+ 
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [

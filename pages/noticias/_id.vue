@@ -21,7 +21,7 @@
             </div>
 
             <div class="card-body">
-              <h1 class="card-title title">{{ posts.titulo }}</h1>
+              <h1 class="card-title title">{{ title }}</h1>
 
               <div v-html="contenido"></div>
             </div>
@@ -32,65 +32,76 @@
   </div>
 </template>
 <script>
+
+
 import axios from 'axios'
 import moment from 'moment'
 import marked from 'marked'
 require('moment/locale/es-mx')
 
 export default {
-  head() {
-    return{
-         
-      title: this.posts.titulo,
-      meta:[
-        {
-          hid:'description',
-          name: 'description',
-          content:this.posts.titulo,
-          
-        },
-        { 
-     
-        hid: 'og:url', 
-        property: 'og:url', 
-        content: `https://quepasanews.info/${this.posts.id}` 
-        
-      },
 
-      {
-        hid: 'og:title',
-        property: 'og:title',
-        content: this.posts.titulo
-      },
-
-          {
-        hid: 'og:description',
-        property: 'og:description',
-        content: this.slug
-      },
-
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: this.imagen
-      },
-        
-      ]
- 
-    }
-  },
-
-
-  data() {
+    data() {
     return {
       posts: {},
+      title:String,
       contenido: {},
       imagen: {},
       categoria: {},
-      slug:{},
+      slug: {},
       moment: moment,
     }
   },
+  head() {
+    return {
+      title: this.title,
+
+      meta: [
+
+       
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content:  'descripcion',
+        },
+
+        
+      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      script: [{}, {}],
+    }
+  },
+
+  // head() {
+  //   return{
+
+  //     title: this.posts.titulo,
+  //     meta:[
+  //       {
+  //         hid:'description',
+  //         name: 'description',
+  //         content:this.posts.titulo,
+
+  //       },
+
+  //     {
+  //       hid: 'og:title',
+  //       property: 'og:title',
+  //       content: this.posts.titulo
+  //     },
+
+  //     {
+  //       hid: 'og:image',
+  //       property: 'og:image',
+  //       content: this.imagen
+  //     },
+
+  //     ]
+
+  //   }
+  // },
+
+
 
   async mounted() {
     try {
@@ -99,6 +110,7 @@ export default {
           this.$route.params.id
       )
       this.posts = res.data
+      this.title = res.data.titulo
       this.contenido = marked(res.data.descripcion)
       this.imagen = res.data.imagen[0].url
       this.categoria = res.data.categorias[0].titulo

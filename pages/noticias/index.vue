@@ -31,46 +31,28 @@ import moment from 'moment'
 require('moment/locale/es-mx')
 
 export default {
-//  head() {
-//     return {
-//       title: this.posts.titulo,
-//       meta:[
-//         {
-//           hid:'description',
-//           name: 'description',
-//           content:this.posts.titulo,
-          
-//         },
-//         { 
-     
-//         hid: 'og:url', 
-//         property: 'og:url', 
-//         content: `https://quepasanews.info/${this.posts.id}` 
-        
-//       },
-
-//       {
-//         hid: 'og:title',
-//         property: 'og:title',
-//         content: this.posts.titulo
-//       },
-
-//           {
-//         hid: 'og:description',
-//         property: 'og:description',
-//         content: this.posts.titulo
-//       },
-
-//       {
-//         hid: 'og:image',
-//         property: 'og:image',
-//         content: this.imagen
-//       },
-        
-//       ]
-//     }
-//   },
-
+    head: {
+    title: '%s | Que Pasa News Noticias',
+    htmlAttrs: {
+      lang: 'es'
+    },
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'og:description', name: 'og:description', content: '%s' },
+ 
+      { name: 'format-detection', content: 'telephone=no' }
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [{
+      
+    }, {
+      
+    }],
+  },
+ 
   components: {
     Post,
   },
