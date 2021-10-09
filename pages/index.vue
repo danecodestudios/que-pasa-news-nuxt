@@ -22,7 +22,7 @@ export default {
 
 head(){
   return{
-title: this.posts.titulo,
+title:'Que Pasa News || Home',
       meta:[
         {
           hid:'description',
