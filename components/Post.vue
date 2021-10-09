@@ -137,7 +137,7 @@ a:hover {
 <script>
 export default {
   name: 'Post',
-  props: ['id', 'imagen', 'titulo', 'categoria', 'hyf'],
+  props: ['id', 'imagen', 'titulo', 'categoria', 'hyf', 'slug'],
 
   data() {
     return {}

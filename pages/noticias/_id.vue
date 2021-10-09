@@ -44,8 +44,9 @@ export default {
       meta:[
         {
           hid:this.contenido,
-          name :this.contenido,
-          content:this.categoria 
+          name :this.posts.slug,
+          content:this.slug,
+          description:this.slug 
         }
       ]
     }
@@ -58,6 +59,7 @@ export default {
       contenido: {},
       imagen: {},
       categoria: {},
+      slug:{},
       moment: moment,
     }
   },
@@ -72,6 +74,7 @@ export default {
       this.contenido = marked(res.data.descripcion)
       this.imagen = res.data.imagen[0].url
       this.categoria = res.data.categorias[0].titulo
+      this.slug = res.data.slug
     } catch (error) {
       err = error
     }

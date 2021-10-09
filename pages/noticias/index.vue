@@ -15,6 +15,7 @@
             :titulo="post.titulo"
             :categoria="post.categorias[0].titulo"
             :hyf="moment(post.published_at).fromNow('es-us')"
+            :slug="post.slug"
           />
         </div>
       </div>
