@@ -139,6 +139,8 @@ export default {
   name: 'Post',
   props: ['id', 'imagen', 'titulo', 'categoria', 'hyf', 'slug'],
 
+  
+
   data() {
     return {}
   },

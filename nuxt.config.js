@@ -8,7 +8,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'La pagina de mayor contenido en colombia' },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Este es una prueba del titulo'
+      },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [

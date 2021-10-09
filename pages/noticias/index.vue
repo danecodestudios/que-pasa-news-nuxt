@@ -31,13 +31,45 @@ import moment from 'moment'
 require('moment/locale/es-mx')
 
 export default {
-head(){
-  return{
+//  head() {
+//     return {
+//       title: this.posts.titulo,
+//       meta:[
+//         {
+//           hid:'description',
+//           name: 'description',
+//           content:this.posts.titulo,
+          
+//         },
+//         { 
+     
+//         hid: 'og:url', 
+//         property: 'og:url', 
+//         content: `https://quepasanews.info/${this.posts.id}` 
+        
+//       },
 
-    title: " Que Pasa News || Colombia Noticias "
+//       {
+//         hid: 'og:title',
+//         property: 'og:title',
+//         content: this.posts.titulo
+//       },
 
-  }
-},
+//           {
+//         hid: 'og:description',
+//         property: 'og:description',
+//         content: this.posts.titulo
+//       },
+
+//       {
+//         hid: 'og:image',
+//         property: 'og:image',
+//         content: this.imagen
+//       },
+        
+//       ]
+//     }
+//   },
 
   components: {
     Post,
