@@ -19,6 +19,21 @@ import Noticias from '@/pages/noticias/index.vue'
 import Destacados from '@/components/Destacados.vue'
 import Nav from '@/components/Nav.vue'
 export default {
+
+head(){
+  return{
+title: this.posts.titulo,
+      meta:[
+        {
+          hid:'description',
+          name: 'description',
+          content:'Pagina De Inicio De Que Pasa News',
+          
+        },
+      ]
+  }
+},
+
   components: {
     Noticias,
     Destacados,
