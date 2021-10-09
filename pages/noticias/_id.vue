@@ -43,11 +43,37 @@ export default {
       title: this.posts.titulo,
       meta:[
         {
-          hid:this.contenido,
-          name :this.posts.slug,
-          content:this.slug,
-          description:this.slug 
-        }
+          hid:'description',
+          name: 'description',
+          content:this.posts.titulo,
+          
+        },
+        { 
+     
+        hid: 'og:url', 
+        property: 'og:url', 
+        content: `https://quepasanews.info/${this.posts.id}` 
+        
+      },
+
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: this.posts.titulo
+      },
+
+          {
+        hid: 'og:description',
+        property: 'og:description',
+        content: this.slug
+      },
+
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: this.imagen
+      },
+        
       ]
     }
   },
