@@ -44,7 +44,7 @@ export default {
     data() {
     return {
       posts: {},
-      title:String,
+      title: '',
       contenido: {},
       imagen: {},
       categoria: {},

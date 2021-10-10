@@ -1,25 +1,27 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    title: '%s | Que Pasa News',
-    htmlAttrs: {
-      lang: 'es'
-    },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'og:description', name: 'og:description', content: '%s' },
- 
-      { name: 'format-detection', content: 'telephone=no' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
-    script: [{
-      src: 'https://kit.fontawesome.com/b6939f5080.js'
-    }, {
-      
-    }],
+  head() {
+    return{
+      title: '%s | Que Pasa News',
+      htmlAttrs: {
+        lang: 'es'
+      },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: '%s' },
+   
+        { name: 'format-detection', content: 'telephone=no' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      ],
+      script: [{
+        src: 'https://kit.fontawesome.com/b6939f5080.js'
+      }, {
+        
+      }],
+    }
   },
  
 
@@ -41,7 +43,12 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/google-analytics'
   ],
+
+  googleAnalytics: {
+    id: 'G-0TDGLJHNW4'
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

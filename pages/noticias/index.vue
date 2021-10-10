@@ -31,8 +31,9 @@ import moment from 'moment'
 require('moment/locale/es-mx')
 
 export default {
-    head: {
-    title: '%s | Que Pasa News Noticias',
+    head() {
+      return{
+         title: '%s | Que Pasa News Noticias',
     htmlAttrs: {
       lang: 'es'
     },
@@ -51,6 +52,7 @@ export default {
     }, {
       
     }],
+      }
   },
  
   components: {
