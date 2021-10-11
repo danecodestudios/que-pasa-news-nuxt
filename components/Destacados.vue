@@ -1,41 +1,59 @@
 <template>
   <div class="padre">
     <div class="container-fluid">
-      <div class="row">
+      <div class="row content-0">
         <div class="col-12 col-md-7 col-lg-8 col-xl-8">
-          <NuxtLink :to="'/noticias/' ">
+          <NuxtLink class="a" :to=" '/primicia/' + idUno">
             <img
               class="fila-0"
               :src="imagenCero"
               alt="QUE PASA NOTICIAS || NEWS BARRANQUILLA, ATLANTICO, CARTAGENA, BOLIVAR, CARIBE, COLOMBIA Y EL MUNDO NEWS "
             />
-            <h1 class="primicia-titulo">{{ primicia.titulo }}</h1>
+
+            <div class="box-titulo">
+              <span class="hour-0">
+                <i class="fas fa-history"></i> &nbsp; Hace :
+                {{ moment(primicia.published_at).fromNow('es-us') }}</span
+              >
+              <h1 class="primicia-titulo">{{ primicia.titulo }}</h1>
+            </div>
           </NuxtLink>
         </div>
 
         <div class="col-12 col-md-5 col-lg-4 col-xl-4">
-          <div class="row">
-            <NuxtLink :to="'/noticias/' ">
-              <img
-                class="fila-1"
-                :src="imagenUno"
-                alt="QUE PASA NOTICIAS || NEWS BARRANQUILLA, ATLANTICO, CARTAGENA, BOLIVAR, CARIBE, COLOMBIA Y EL MUNDO NEWS"
-              />
-              <div class="primicias-titulo">
+          <div class="row content-1">
+            <NuxtLink :to="'/primicia/primicias/destacado/' + idDos">
+              <div class="cal">
+                <img
+                  class="fila-1"
+                  :src="imagenUno"
+                  alt="QUE PASA NOTICIAS || NEWS BARRANQUILLA, ATLANTICO, CARTAGENA, BOLIVAR, CARIBE, COLOMBIA Y EL MUNDO NEWS"
+                />
+              </div>
+              <div class="box-titulo-1">
+                <span class="hour-1">
+                  <i class="fas fa-history"></i> &nbsp; Hace :{{
+                    moment(primiciasUno.published_at).fromNow('es-us')
+                  }}</span
+                >
                 <h1 class="prim-titulo-1">{{ primiciasUno.titulo }}</h1>
               </div>
             </NuxtLink>
           </div>
 
           <div class="row">
-            <NuxtLink :to="'/noticias/' ">
+            <NuxtLink :to="'/primicia/primicias/destacados/' + idTres">
               <img
                 class="fila-2"
                 :src="imagenDos"
                 alt="QUE PASA NOTICIAS || NEWS BARRANQUILLA, ATLANTICO, CARTAGENA, BOLIVAR, CARIBE, COLOMBIA Y EL MUNDO NEWS"
               />
-              <span>{{primiciasDos.categoria}}</span>
-              <div class="primicias-titulo">
+
+              <div class="box-titulo-2">
+                <span class="hour-2">
+                  <i class="fas fa-history"></i> &nbsp; Hace :
+                  {{ moment(primiciasUno.published_at).fromNow('es-us') }}</span
+                >
                 <h1 class="prim-titulo-2">{{ primiciasDos.titulo }}</h1>
               </div>
             </NuxtLink>
@@ -48,76 +66,126 @@
 
 
 <style scoped>
-
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 .padre {
-  padding: 10px 200px;
-  margin-bottom: 50px;
-  border-radius: 20px;
+  padding: 10px 250px;
 }
-.fila-0 {
-  height: 510px;
-  box-shadow: 2px 5px 10px 5px #31015821;
-  border-radius: 10px;
 
+.fa-history {
+  color: rgb(59, 0, 136);
+}
+
+.fila-0 {
+  display: block;
+  height: 510px;
+  filter: saturate(150%);
+  background: rgba(0, 0, 0, 0.9) none !important;
+  background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0)) !important;
+  z-index: 0;
+}
+
+.box-titulo {
+  padding: 20px 20px;
+  position: relative;
+  top: -149px;
+  background: rgba(0, 0, 0, 0.829) none !important;
+  background: none,
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+}
+
+.hour-0 {
+  color: rgb(255, 255, 255);
+  font-family: 'Merriweather Sans', sans-serif;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  font-weight: 300;
+  position: relative;
+  right: 8px;
+  top: -10px;
+  text-align: center;
 }
 
 .primicia-titulo {
-  position: relative;
-  top: -100px;
   font-size: 2rem;
-  padding: 0px 20px;
-  color: white;
-  font-family: 'Ubuntu', sans-serif;
-  filter: saturate(250%);
-  font-family: 'Merriweather Sans', sans-serif;   
+  color: #f4f4f4;
+  font-family: 'Merriweather Sans', sans-serif;
   letter-spacing: 0.1rem;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 
 .fila-1 {
   display: block;
-  height: 250px;
+  height: 248px;
   width: 100%;
   margin: 0px;
-  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.9) none !important;
+  background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0)) !important;
+}
+
+.box-titulo-1 {
+  position: relative;
+  top: -115px;
+  width: auto;
+  padding: 20px 10px;
+  background: rgba(0, 0, 0, 0.9) none !important;
+  background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 5%, rgb(0, 0, 0)) !important;
+}
+
+.hour-1 {
+  color: rgb(255, 255, 255);
+  font-family: 'Merriweather Sans', sans-serif;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  font-weight: 300;
+  position: relative;
+  right: 8px;
+  top: -10px;
+  text-align: center;
 }
 
 .prim-titulo-1 {
-  position: relative;
-  top: -75px;
-  width: auto;
-  padding: 0px 10px;
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: white;
-  text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
   font-family: 'Merriweather Sans', sans-serif;
- 
   letter-spacing: 0.1rem;
 }
-
-
 
 .fila-2 {
   display: block;
   width: 100%;
-  height: 250px;
+  height: 248px;
   position: relative;
-  top: -42px;
+  top: -110px;
   margin: 0;
-  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.9) none !important;
+  background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 90%, rgb(0, 0, 0)) !important;
+}
+
+.box-titulo-2 {
+  position: relative;
+  background: rgba(0, 0, 0, 0.9) none !important;
+  background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 5%, rgb(0, 0, 0)) !important;
+  top: -228px;
+  padding: 20px 10px;
+}
+
+.hour-2 {
+  color: rgb(255, 255, 255);
+  font-family: 'Merriweather Sans', sans-serif;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  font-weight: 300;
+  position: relative;
+  right: 8px;
+  top: -10px;
+  text-align: center;
 }
 
 .prim-titulo-2 {
-  position: relative;
-  top: -110px;
   width: auto;
-  padding: 0px 10px;
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: white;
-  text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
   font-family: 'Merriweather Sans', sans-serif;
- 
   letter-spacing: 0.1rem;
 }
 
@@ -134,69 +202,119 @@
   .fila-0 {
     height: 250px;
     box-shadow: none;
-    border-radius: 0;
     width: 100%;
     margin-bottom: 50px;
   }
 
-  .primicia-titulo {
-    position: absolute;
-    top: 270px;
+  .box-titulo {
+    padding: 10px 10px;
+    position:relative;
+    top: -178px;
     bottom: 100%;
-    font-size: 1.3rem;
+    background: rgba(0, 0, 0, 0.829) none !important;
+    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+  }
+
+  .hour-0 {
+    color: rgb(255, 255, 255);
+    font-family: 'Merriweather Sans', sans-serif;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    font-weight: 300;
+    position: relative;
+    right: -5px;
+    top: -10px;
+    text-align: center;
+  }
+
+  .primicia-titulo {
+    font-size: 1rem;
+    font-weight: 500;
     padding: 0px 20px;
     color: white;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
   }
+
+
 
   .fila-1 {
     display: block;
     height: 250px;
     width: 100%;
     margin: 0px;
-    border-radius: 10px;
+    position: relative;
+    top: -100px;
   }
 
-  .primicias-titulo-1 {
-    width: 100%;
-    height: auto;
+  .box-titulo-1 {
+    padding: 10px 20px;
+    position:relative;
+    top: -210px;
+    background: rgba(0, 0, 0, 0.829) none !important;
+    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+  }
+
+   .hour-1 {
+    color: rgb(255, 255, 255);
+    font-family: 'Merriweather Sans', sans-serif;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    font-weight: 300;
+    position: relative;
+    right: 8px;
+    top: -10px;
     text-align: center;
   }
 
   .prim-titulo-1 {
-    position: relative;
-    top: -100px;
     width: auto;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 400;
+    text-align: start;
+    font-size: 1rem;
   }
 
-  .primicias-titulo-2 {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    text-align: center;
-  }
-
-  .prim-titulo-2 {
-    position: relative;
-    top: -100px;
-    width: 100%;
-  }
 
   .fila-2 {
     display: block;
     width: 100%;
     height: 250px;
     position: relative;
-    top: 0;
+    top: -150px;
     margin: 0;
-    border-radius: 10px;
   }
+
+.box-titulo-2{
+    padding: 10px 20px;
+    position: relative;
+    top: -258px;
+    background: rgba(0, 0, 0, 0.829) none !important;
+    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+  }
+
+   .hour-2 {
+    color: rgb(255, 255, 255);
+    font-family: 'Merriweather Sans', sans-serif;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    font-weight: 300;
+    position: relative;
+    right: 8px;
+    top: -10px;
+    text-align: center;
+  }
+
+  .prim-titulo-2 {
+    font-size: 1rem;
+    width: 100%;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 400;
+  }
+
+
 }
 
 /* MEDIDA CELULAR MEDIANO (M)  */
-@media screen and (min-width: 321px) and (max-width: 575.98px) {
-  .padre {
+@media screen and (min-width: 321px) and (max-width: 424.98px) {
+   .padre {
     padding: 5px;
   }
 
@@ -207,68 +325,116 @@
   .fila-0 {
     height: 250px;
     box-shadow: none;
-    border-radius: 0;
     width: 100%;
     margin-bottom: 50px;
   }
 
-  .primicia-titulo {
-    position: absolute;
-    top: 270px;
+  .box-titulo {
+    padding: 10px 10px;
+    position:relative;
+    top: -160px;
     bottom: 100%;
-    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.829) none !important;
+    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+  }
+
+  .hour-0 {
+    color: rgb(255, 255, 255);
+    font-family: 'Merriweather Sans', sans-serif;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    font-weight: 300;
+    position: relative;
+    right: -5px;
+    top: -10px;
+    text-align: center;
+  }
+
+  .primicia-titulo {
+    font-size: 1rem;
+    font-weight: 500;
     padding: 0px 20px;
     color: white;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
   }
+
+
 
   .fila-1 {
     display: block;
     height: 250px;
     width: 100%;
     margin: 0px;
-    border-radius: 10px;
+    position: relative;
+    top: -100px;
   }
 
-  .primicias-titulo-1 {
-    width: 100%;
-    height: auto;
+  .box-titulo-1 {
+    padding: 10px 20px;
+    position:relative;
+    top: -210px;
+    background: rgba(0, 0, 0, 0.829) none !important;
+    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+  }
+
+   .hour-1 {
+    color: rgb(255, 255, 255);
+    font-family: 'Merriweather Sans', sans-serif;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    font-weight: 300;
+    position: relative;
+    right: 8px;
+    top: -10px;
     text-align: center;
   }
 
   .prim-titulo-1 {
-    position: relative;
-    top: -100px;
     width: auto;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 400;
+    text-align: start;
+    font-size: 1rem;
   }
 
-  .primicias-titulo-2 {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    text-align: center;
-  }
-
-  .prim-titulo-2 {
-    position: relative;
-    top: -100px;
-    width: 100%;
-  }
 
   .fila-2 {
     display: block;
     width: 100%;
     height: 250px;
     position: relative;
-    top: 0;
+    top: -150px;
     margin: 0;
-    border-radius: 10px;
+  }
+
+.box-titulo-2{
+    padding: 10px 20px;
+    position: relative;
+    top: -258px;
+    background: rgba(0, 0, 0, 0.829) none !important;
+    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+  }
+
+   .hour-2 {
+    color: rgb(255, 255, 255);
+    font-family: 'Merriweather Sans', sans-serif;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    font-weight: 300;
+    position: relative;
+    right: 8px;
+    top: -10px;
+    text-align: center;
+  }
+
+  .prim-titulo-2 {
+    font-size: 1rem;
+    width: 100%;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 400;
   }
 }
 /* MEDIDA CELULAR  GRANDE ( L)  */
-@media screen and (min-width: 576px) and (max-width: 767.98px) {
-  .padre {
+@media screen and (min-width: 425px) and (max-width: 767.98px) {
+   .padre {
     padding: 5px;
   }
 
@@ -277,65 +443,113 @@
   }
 
   .fila-0 {
-    height: 500px;
+    height: 250px;
     box-shadow: none;
-    border-radius: 0;
     width: 100%;
     margin-bottom: 50px;
   }
 
-  .primicia-titulo {
-    position: relative;
-    top: 270px;
+  .box-titulo {
+    padding: 10px 10px;
+    position:relative;
+    top: -160px;
     bottom: 100%;
-    font-size: 1.3rem;
+    background: rgba(0, 0, 0, 0.829) none !important;
+    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+  }
+
+  .hour-0 {
+    color: rgb(255, 255, 255);
+    font-family: 'Merriweather Sans', sans-serif;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    font-weight: 300;
+    position: relative;
+    right: -5px;
+    top: -10px;
+    text-align: center;
+  }
+
+  .primicia-titulo {
+    font-size: 1rem;
+    font-weight: 500;
     padding: 0px 20px;
     color: white;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
   }
+
+
 
   .fila-1 {
     display: block;
     height: 250px;
     width: 100%;
     margin: 0px;
-    border-radius: 10px;
+    position: relative;
+    top: -100px;
   }
 
-  .primicias-titulo-1 {
-    width: 100%;
-    height: auto;
+  .box-titulo-1 {
+    padding: 10px 20px;
+    position:relative;
+    top: -190px;
+    background: rgba(0, 0, 0, 0.829) none !important;
+    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+  }
+
+   .hour-1 {
+    color: rgb(255, 255, 255);
+    font-family: 'Merriweather Sans', sans-serif;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    font-weight: 300;
+    position: relative;
+    right: 8px;
+    top: -10px;
     text-align: center;
   }
 
   .prim-titulo-1 {
-    position: relative;
-    top: -100px;
     width: auto;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 400;
+    text-align: start;
+    font-size: 1rem;
   }
 
-  .primicias-titulo-2 {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    text-align: center;
-  }
-
-  .prim-titulo-2 {
-    position: relative;
-    top: -100px;
-    width: 100%;
-  }
 
   .fila-2 {
     display: block;
     width: 100%;
     height: 250px;
     position: relative;
-    top: 0;
+    top: -150px;
     margin: 0;
-    border-radius: 10px;
+  }
+
+.box-titulo-2{
+    padding: 10px 20px;
+    position: relative;
+    top: -240px;
+    background: rgba(0, 0, 0, 0.829) none !important;
+    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+  }
+
+   .hour-2 {
+    color: rgb(255, 255, 255);
+    font-family: 'Merriweather Sans', sans-serif;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    font-weight: 300;
+    position: relative;
+    right: 8px;
+    top: -10px;
+    text-align: center;
+  }
+
+  .prim-titulo-2 {
+    font-size: 1rem;
+    width: 100%;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 400;
   }
 }
 /* MEDIDA CELULAR  TABLET (S)  */
@@ -347,7 +561,6 @@
   .fila-0 {
     height: 300px;
     box-shadow: none;
-    border-radius: 0;
     width: 100%;
     margin-bottom: 0px;
   }
@@ -360,7 +573,6 @@
     padding: 0px 20px;
     color: white;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
-    font-family: 'Ubuntu', sans-serif;
   }
 
   .fila-1 {
@@ -368,7 +580,6 @@
     height: 140px;
     width: 100%;
     margin: 0px;
-    border-radius: 10px;
   }
 
   .primicias-titulo-1 {
@@ -412,13 +623,11 @@
   .padre {
     padding: 10px 20px;
     margin-bottom: 50px;
-    border-radius: 20px;
   }
 
   .fila-0 {
     height: 450px;
     box-shadow: 2px 5px 10px 5px #31015821;
-    border-radius: 5px;
   }
 
   .primicia-titulo {
@@ -429,9 +638,6 @@
     color: white;
     font-family: 'Ubuntu', sans-serif;
     filter: saturate(250%);
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-      -1px 1px 0 #000, 1px 1px 0 #000;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.7);
     letter-spacing: 0.1rem;
   }
 
@@ -440,7 +646,6 @@
     height: 210px;
     width: 100%;
     margin: 0px;
-    border-radius: 10px;
   }
 
   .prim-titulo-1 {
@@ -452,9 +657,6 @@
     color: white;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
     font-family: 'Ubuntu', sans-serif;
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-      -1px 1px 0 #000, 1px 1px 0 #000;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.7);
     letter-spacing: 0;
   }
 
@@ -465,7 +667,6 @@
     position: relative;
     top: -45px;
     margin: 0;
-    border-radius: 10px;
   }
 
   .prim-titulo-2 {
@@ -477,9 +678,6 @@
     color: white;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
     font-family: 'Ubuntu', sans-serif;
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-      -1px 1px 0 #000, 1px 1px 0 #000;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.7);
     letter-spacing: 0;
   }
 }
@@ -487,13 +685,11 @@
   .padre {
     padding: 10px 20px;
     margin-bottom: 50px;
-    border-radius: 20px;
   }
 
   .fila-0 {
     height: 450px;
     box-shadow: 2px 5px 10px 5px #31015821;
-    border-radius: 5px;
   }
 
   .primicia-titulo {
@@ -504,9 +700,6 @@
     color: white;
     font-family: 'Ubuntu', sans-serif;
     filter: saturate(250%);
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-      -1px 1px 0 #000, 1px 1px 0 #000;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.7);
     letter-spacing: 0.1rem;
   }
 
@@ -515,7 +708,6 @@
     height: 210px;
     width: 100%;
     margin: 0px;
-    border-radius: 10px;
   }
 
   .prim-titulo-1 {
@@ -527,9 +719,6 @@
     color: white;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
     font-family: 'Ubuntu', sans-serif;
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-      -1px 1px 0 #000, 1px 1px 0 #000;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.7);
     letter-spacing: 0;
   }
 
@@ -540,7 +729,6 @@
     position: relative;
     top: -25px;
     margin: 0;
-    border-radius: 10px;
   }
 
   .prim-titulo-2 {
@@ -552,9 +740,6 @@
     color: white;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
     font-family: 'Ubuntu', sans-serif;
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-      -1px 1px 0 #000, 1px 1px 0 #000;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.7);
     letter-spacing: 0;
   }
 }
@@ -563,13 +748,11 @@
   .padre {
     padding: 10px 30px;
     margin-bottom: 50px;
-    border-radius: 20px;
   }
 
   .fila-0 {
     height: 450px;
     box-shadow: 2px 5px 10px 5px #31015821;
-    border-radius: 5px;
   }
 
   .primicia-titulo {
@@ -580,9 +763,6 @@
     color: white;
     font-family: 'Ubuntu', sans-serif;
     filter: saturate(250%);
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-      -1px 1px 0 #000, 1px 1px 0 #000;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.7);
     letter-spacing: 0.1rem;
   }
 
@@ -591,7 +771,6 @@
     height: 210px;
     width: 100%;
     margin: 0px;
-    border-radius: 10px;
   }
 
   .prim-titulo-1 {
@@ -603,9 +782,6 @@
     color: white;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
     font-family: 'Ubuntu', sans-serif;
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-      -1px 1px 0 #000, 1px 1px 0 #000;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.7);
     letter-spacing: 0;
   }
 
@@ -614,9 +790,8 @@
     width: 100%;
     height: 210px;
     position: relative;
-    top: -25px;
+    top: -18px;
     margin: 0;
-    border-radius: 10px;
   }
 
   .prim-titulo-2 {
@@ -628,9 +803,6 @@
     color: white;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 57%);
     font-family: 'Ubuntu', sans-serif;
-    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
-      -1px 1px 0 #000, 1px 1px 0 #000;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.7);
     letter-spacing: 0;
   }
 }
@@ -647,8 +819,11 @@ export default {
   data() {
     return {
       primicia: {},
-      primiciasUno:{},
-      primiciasDos:{},
+      primiciasUno: {},
+      primiciasDos: {},
+      idUno:{},
+      idDos:{},
+      idTres:{},
       imagenCero: {},
       imagenUno: {},
       imagenDos: {},
@@ -662,6 +837,9 @@ export default {
         'https://que-pasa-strapi.herokuapp.com/primicias'
       )
       this.primicia = res.data.destacado
+      this.idUno = res.data.destacado.id
+      this.idDos = res.data.destacados[0].id
+      this.idTres = res.data.destacados[1].id
       this.primiciasUno = res.data.destacados[0]
       this.primiciasDos = res.data.destacados[1]
       this.imagenCero = res.data.destacado.imagen[0].url

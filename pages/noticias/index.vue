@@ -33,14 +33,14 @@ require('moment/locale/es-mx')
 export default {
     head() {
       return{
-         title: '%s | Que Pasa News Noticias',
+         title: ' Que Pasa News Noticias',
     htmlAttrs: {
       lang: 'es'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'og:description', name: 'og:description', content: '%s' },
+      { hid: 'og:description', name: 'og:description', content: '' },
  
       { name: 'format-detection', content: 'telephone=no' }
     ],

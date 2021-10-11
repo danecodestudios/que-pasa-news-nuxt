@@ -4,15 +4,22 @@
     <div>
       <Nav />
     </div>
-    <div>
+    <div >
       <Destacados />
     </div>
 
-    <div>
+    <div class="noticias">
       <Noticias />
     </div>
   </div>
 </template>
+
+<style scoped>
+.noticias{
+  position: relative;
+  top: -150px;
+}
+</style>
 
 <script>
 import Noticias from '@/pages/noticias/index.vue'

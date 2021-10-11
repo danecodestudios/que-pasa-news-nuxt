@@ -35,7 +35,7 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
-  filter: saturate(120%);
+  filter: saturate(160%);
   position: relative;
   display: block;
   margin-top: auto;
@@ -44,6 +44,7 @@
 
 .card-imagen:hover {
   transition: opacity 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+  filter: saturate(180%);
   cursor: grab;
 }
 
@@ -63,16 +64,16 @@
 
 .tag {
   background-color: #310158;
-  color: #04f310;
+  color: #1eff00;
   border-radius: 5px;
   font-size: 14px;
   margin: 0;
-  padding: 2px 8px;
+  padding: 3px 10px;
   text-transform: uppercase;
   position: absolute;
   top: 48%;
   right: .5rem;
-  
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 
@@ -83,7 +84,6 @@ a {
 }
 
 a:hover {
-  color: rgb(72, 8, 175);
   color: #040d8a;
 }
 
@@ -105,7 +105,7 @@ a:hover {
 
 @media screen and (min-width: 768px) and (max-width: 991.98px){
   .card-body h5 {
-  font-family: "Bitter", serif;
+  font-family: 'Merriweather Sans', sans-serif;
   text-align: inherit;
   font-size: .8rem;
 
@@ -124,7 +124,7 @@ a:hover {
 
 @media screen and (min-width: 1200px) and (max-width: 1399.98px){
 .card-title{
-  font-family: "Bitter", serif;
+  font-family: 'Merriweather Sans', sans-serif;
   text-align: inherit;
   font-size: 1rem;
   color: white;
