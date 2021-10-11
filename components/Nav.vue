@@ -484,7 +484,7 @@ export default {
     return {
       current: {},
       index: 0,
-      audio : new Audio("http://stream.zeno.fm/5m7yn6bxe48uv"),
+      // audio : new Audio("http://stream.zeno.fm/5m7yn6bxe48uv"),
       pausa: false,
     }
   },
