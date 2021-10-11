@@ -190,7 +190,7 @@
 }
 
 /* MEDIDA CELULAR PEQUEÑO (XS)  */
-@media screen and (min-width: 140px) and (max-width: 320.98px) {
+@media screen and (min-width: 140px) and (max-width: 320.98px) and (orientation:portrait){
   .padre {
     padding: 5px;
   }
@@ -313,7 +313,7 @@
 }
 
 /* MEDIDA CELULAR MEDIANO (M)  */
-@media screen and (min-width: 321px) and (max-width: 424.98px) {
+ @media (min-width: 321px) and (max-width:378.98px) and (orientation:portrait){
    .padre {
     padding: 5px;
   }
@@ -433,7 +433,7 @@
   }
 }
 /* MEDIDA CELULAR  GRANDE ( L)  */
-@media screen and (min-width: 425px) and (max-width: 767.98px) {
+ @media (min-width: 379px) and (max-width: 575.98px) and (orientation:portrait){
    .padre {
     padding: 5px;
   }
@@ -551,9 +551,9 @@
     font-family: 'Merriweather Sans', sans-serif;
     font-weight: 400;
   }
-}
-/* MEDIDA CELULAR  TABLET (S)  */
-@media screen and (min-width: 768px) and (max-width: 991.98px) {
+} 
+/* MEDIDA CELULAR  TABLET (S) 
+/* @media screen and (min-width: 768px) and (max-width: 991.98px) {
   .padre {
     padding: 5px;
   }
@@ -618,8 +618,8 @@
     width: 100%;
     font-size: 0.8rem;
   }
-}
-@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+} */
+/* @media screen and (min-width: 992px) and (max-width: 1199.98px) {
   .padre {
     padding: 10px 20px;
     margin-bottom: 50px;
@@ -680,8 +680,8 @@
     font-family: 'Ubuntu', sans-serif;
     letter-spacing: 0;
   }
-}
-@media screen and (min-width: 1200px) and (max-width: 1399.98px) {
+} */
+/* @media screen and (min-width: 1200px) and (max-width: 1399.98px) {
   .padre {
     padding: 10px 20px;
     margin-bottom: 50px;
@@ -742,9 +742,9 @@
     font-family: 'Ubuntu', sans-serif;
     letter-spacing: 0;
   }
-}
+} */
 
-@media (min-width: 1400px) and (max-width: 1919.98px) {
+/* @media (min-width: 1400px) and (max-width: 1919.98px) {
   .padre {
     padding: 10px 30px;
     margin-bottom: 50px;
@@ -805,7 +805,7 @@
     font-family: 'Ubuntu', sans-serif;
     letter-spacing: 0;
   }
-}
+} */
 </style>
 
 <script>
