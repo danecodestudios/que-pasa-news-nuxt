@@ -482,17 +482,19 @@ export default {
  
   data() {
     return {
-      current: {},
-      index: 0,
-      // audio : new Audio("http://stream.zeno.fm/5m7yn6bxe48uv"),
+      audio : null,
       pausa: false,
     }
+  },
+    mounted() {
+    this.$store.commit('initializeSound');
   },
   methods: {
     sonido() {
 
    
-      if (this.pausa == false) {
+      if (this.pausa == false || this.isSoundEnabled) {
+        this.audio = new Audio("http://stream.zeno.fm/5m7yn6bxe48uv")
         this.audio.play()
         this.pausa = true
       } else {
@@ -501,8 +503,10 @@ export default {
       }
     },
   },
-  mounted() {
-    
-  },
+computed: {
+    isSoundEnabled() {
+      return this.$store.state.isSoundEnabled;
+    },
+  }
 }
 </script>

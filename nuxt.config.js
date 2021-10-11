@@ -61,14 +61,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    loaders: {
-      vue: {
-        transformAssetUrls: {
-          audio: 'src'
-        }
-      }
-    },
-
     extend(config, ctx) {
       config.module.rules.push({
         test: /\.(ogg|mp3|wav|mpe?g)$/i,

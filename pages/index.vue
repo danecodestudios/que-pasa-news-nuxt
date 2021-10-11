@@ -34,7 +34,7 @@ title:'Que Pasa News || Home',
         {
           hid:'description',
           name: 'description',
-          content:'Pagina De Inicio De Que Pasa News',
+          content:'La Web De Noticias De Barranquilla, Atlantico, Costa Caribe Colombiana, Colombia Y el Mundo',
           
         },
       ]
