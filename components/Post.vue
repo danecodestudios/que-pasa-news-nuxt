@@ -35,7 +35,7 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
-  filter: saturate(160%);
+  filter: saturate(120%);
   position: relative;
   display: block;
   margin-top: auto;

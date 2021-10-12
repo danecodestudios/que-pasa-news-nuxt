@@ -52,7 +52,7 @@
               <div class="box-titulo-2">
                 <span class="hour-2">
                   <i class="fas fa-history"></i> &nbsp; Hace :
-                  {{ moment(primiciasUno.published_at).fromNow('es-us') }}</span
+                  {{ moment(primiciasDos.published_at).fromNow('es-us') }}</span
                 >
                 <h1 class="prim-titulo-2">{{ primiciasDos.titulo }}</h1>
               </div>

@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head() {
-    return{
+    return {
       title: 'Que Pasa News || Aplicacion Web De Noticias ',
       htmlAttrs: {
         lang: 'es'
@@ -10,7 +10,7 @@ export default {
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { hid: 'description', name: 'description', content: 'La Web De Noticias De Barranquilla, Atlantico, Costa Caribe Colombiana, Colombia Y el Mundo' },
-   
+
         { name: 'format-detection', content: 'telephone=no' }
       ],
       link: [
@@ -19,11 +19,11 @@ export default {
       script: [{
         src: 'https://kit.fontawesome.com/b6939f5080.js'
       }, {
-        
+
       }],
     }
   },
- 
+
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
@@ -34,8 +34,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    
-    
+
+
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
