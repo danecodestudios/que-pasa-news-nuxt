@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="row content-0">
         <div class="col-12 col-md-7 col-lg-8 col-xl-8">
-          <NuxtLink class="a" :to=" '/primicia/' + idUno">
+          <NuxtLink class="a" :to="'/primicia/' + idUno">
             <img
               class="fila-0"
               :src="imagenCero"
@@ -190,7 +190,7 @@
 }
 
 /* MEDIDA CELULAR PEQUEÑO (XS)  */
-@media screen and (min-width: 140px) and (max-width: 320.98px) and (orientation:portrait){
+@media screen and (min-width: 140px) and (max-width: 320.98px) and (orientation: portrait) {
   .padre {
     padding: 5px;
   }
@@ -208,11 +208,12 @@
 
   .box-titulo {
     padding: 10px 10px;
-    position:relative;
+    position: relative;
     top: -178px;
     bottom: 100%;
     background: rgba(0, 0, 0, 0.829) none !important;
-    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+    background: none,
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
   }
 
   .hour-0 {
@@ -235,8 +236,6 @@
     font-family: 'Merriweather Sans', sans-serif;
   }
 
-
-
   .fila-1 {
     display: block;
     height: 250px;
@@ -248,13 +247,14 @@
 
   .box-titulo-1 {
     padding: 10px 20px;
-    position:relative;
+    position: relative;
     top: -210px;
     background: rgba(0, 0, 0, 0.829) none !important;
-    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+    background: none,
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
   }
 
-   .hour-1 {
+  .hour-1 {
     color: rgb(255, 255, 255);
     font-family: 'Merriweather Sans', sans-serif;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
@@ -273,7 +273,6 @@
     font-size: 1rem;
   }
 
-
   .fila-2 {
     display: block;
     width: 100%;
@@ -283,15 +282,16 @@
     margin: 0;
   }
 
-.box-titulo-2{
+  .box-titulo-2 {
     padding: 10px 20px;
     position: relative;
     top: -258px;
     background: rgba(0, 0, 0, 0.829) none !important;
-    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+    background: none,
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
   }
 
-   .hour-2 {
+  .hour-2 {
     color: rgb(255, 255, 255);
     font-family: 'Merriweather Sans', sans-serif;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
@@ -308,13 +308,11 @@
     font-family: 'Merriweather Sans', sans-serif;
     font-weight: 400;
   }
-
-
 }
 
 /* MEDIDA CELULAR MEDIANO (M)  */
- @media (min-width: 321px) and (max-width:378.98px) and (orientation:portrait){
-   .padre {
+@media (min-width: 321px) and (max-width: 378.98px) and (orientation: portrait) {
+  .padre {
     padding: 5px;
   }
 
@@ -331,11 +329,12 @@
 
   .box-titulo {
     padding: 10px 10px;
-    position:relative;
+    position: relative;
     top: -160px;
     bottom: 100%;
     background: rgba(0, 0, 0, 0.829) none !important;
-    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+    background: none,
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
   }
 
   .hour-0 {
@@ -358,8 +357,6 @@
     font-family: 'Merriweather Sans', sans-serif;
   }
 
-
-
   .fila-1 {
     display: block;
     height: 250px;
@@ -371,13 +368,14 @@
 
   .box-titulo-1 {
     padding: 10px 20px;
-    position:relative;
+    position: relative;
     top: -210px;
     background: rgba(0, 0, 0, 0.829) none !important;
-    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+    background: none,
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
   }
 
-   .hour-1 {
+  .hour-1 {
     color: rgb(255, 255, 255);
     font-family: 'Merriweather Sans', sans-serif;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
@@ -396,7 +394,6 @@
     font-size: 1rem;
   }
 
-
   .fila-2 {
     display: block;
     width: 100%;
@@ -406,15 +403,16 @@
     margin: 0;
   }
 
-.box-titulo-2{
+  .box-titulo-2 {
     padding: 10px 20px;
     position: relative;
     top: -258px;
     background: rgba(0, 0, 0, 0.829) none !important;
-    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+    background: none,
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
   }
 
-   .hour-2 {
+  .hour-2 {
     color: rgb(255, 255, 255);
     font-family: 'Merriweather Sans', sans-serif;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
@@ -433,8 +431,8 @@
   }
 }
 /* MEDIDA CELULAR  GRANDE ( L)  */
- @media (min-width: 379px) and (max-width: 575.98px) and (orientation:portrait){
-   .padre {
+@media (min-width: 379px) and (max-width: 575.98px) and (orientation: portrait) {
+  .padre {
     padding: 5px;
   }
 
@@ -451,11 +449,12 @@
 
   .box-titulo {
     padding: 10px 10px;
-    position:relative;
+    position: relative;
     top: -160px;
     bottom: 100%;
     background: rgba(0, 0, 0, 0.829) none !important;
-    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+    background: none,
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
   }
 
   .hour-0 {
@@ -478,8 +477,6 @@
     font-family: 'Merriweather Sans', sans-serif;
   }
 
-
-
   .fila-1 {
     display: block;
     height: 250px;
@@ -491,13 +488,14 @@
 
   .box-titulo-1 {
     padding: 10px 20px;
-    position:relative;
+    position: relative;
     top: -190px;
     background: rgba(0, 0, 0, 0.829) none !important;
-    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+    background: none,
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
   }
 
-   .hour-1 {
+  .hour-1 {
     color: rgb(255, 255, 255);
     font-family: 'Merriweather Sans', sans-serif;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
@@ -516,7 +514,6 @@
     font-size: 1rem;
   }
 
-
   .fila-2 {
     display: block;
     width: 100%;
@@ -526,15 +523,16 @@
     margin: 0;
   }
 
-.box-titulo-2{
+  .box-titulo-2 {
     padding: 10px 20px;
     position: relative;
     top: -240px;
     background: rgba(0, 0, 0, 0.829) none !important;
-    background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+    background: none,
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
   }
 
-   .hour-2 {
+  .hour-2 {
     color: rgb(255, 255, 255);
     font-family: 'Merriweather Sans', sans-serif;
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
@@ -551,7 +549,7 @@
     font-family: 'Merriweather Sans', sans-serif;
     font-weight: 400;
   }
-} 
+}
 /* MEDIDA CELULAR  TABLET (S) 
 /* @media screen and (min-width: 768px) and (max-width: 991.98px) {
   .padre {
@@ -821,9 +819,9 @@ export default {
       primicia: {},
       primiciasUno: {},
       primiciasDos: {},
-      idUno:{},
-      idDos:{},
-      idTres:{},
+      idUno: {},
+      idDos: {},
+      idTres: {},
       imagenCero: {},
       imagenUno: {},
       imagenDos: {},
