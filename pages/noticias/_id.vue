@@ -40,35 +40,51 @@ import marked from 'marked'
 require('moment/locale/es-mx')
 
 export default {
-
-    data() {
+      data() {
     return {
       posts: {},
       title: '',
-      contenido: {},
+      contenido: "",
       imagen: {},
-      categoria: {},
-      slug: {},
+      categoria: "",
+      slug: "",
       moment: moment,
     }
   },
+
+ 
+
+
+ 
   head() {
     return {
-      title: this.title,
-
+     title: this.title, 
       meta: [
-
-       
         {
-          hid: 'og:description',
-          name: 'og:description',
-          content:  'descripcion',
+          hid: 'description',
+          name: 'description',
+          content:  this.categoria,
         },
-
-        
       ],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-      script: [{}, {}],
+
+    }
+  },
+
+      async mounted() {
+    try {
+      const url = "https://que-pasa-strapi.herokuapp.com/noticias/"
+      const res = await axios.get(
+        `${url}${this.$route.params.id}`
+          
+      )
+      this.posts = res.data
+      this.title = res.data.titulo
+      this.contenido = marked(res.data.descripcion)
+      this.imagen = res.data.imagen[0].url
+      this.categoria = res.data.categorias[0].titulo
+      this.slug = res.data.slug
+    } catch (error) {
+      err = error
     }
   },
 
@@ -103,22 +119,7 @@ export default {
 
 
 
-  async mounted() {
-    try {
-      const res = await axios.get(
-        'https://que-pasa-strapi.herokuapp.com/noticias/' +
-          this.$route.params.id
-      )
-      this.posts = res.data
-      this.title = res.data.titulo
-      this.contenido = marked(res.data.descripcion)
-      this.imagen = res.data.imagen[0].url
-      this.categoria = res.data.categorias[0].titulo
-      this.slug = res.data.slug
-    } catch (error) {
-      err = error
-    }
-  },
+
 }
 </script>
 
@@ -150,7 +151,7 @@ export default {
 }
 .img_posts {
   width: 100% !important;
-  height: 100%;
+  max-height: 800px;
   border-radius: 20px;
 }
 .cat {

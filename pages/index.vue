@@ -27,19 +27,19 @@ import Destacados from '@/components/Destacados.vue'
 import Nav from '@/components/Nav.vue'
 export default {
 
-head(){
-  return{
-title:'Que Pasa News || Home',
-      meta:[
-        {
-          hid:'description',
-          name: 'description',
-          content:'La Web De Noticias De Barranquilla, Atlantico, Costa Caribe Colombiana, Colombia Y el Mundo',
+// head(){
+//   return{
+// title:'Que Pasa News || Home',
+//       meta:[
+//         {
+//           hid:'description',
+//           name: 'description',
+//           content:'La Web De Noticias De Barranquilla, Atlantico, Costa Caribe Colombiana, Colombia Y el Mundo',
           
-        },
-      ]
-  }
-},
+//         },
+//       ]
+//   }
+// },
 
   components: {
     Noticias,

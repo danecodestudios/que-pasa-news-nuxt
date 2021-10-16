@@ -2,6 +2,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head() {
     return {
+      titleTemplate: ' %s || Que Pasa News ',
       title: 'Que Pasa News || Aplicacion Web De Noticias ',
       htmlAttrs: {
         lang: 'es'
@@ -9,7 +10,7 @@ export default {
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'description', name: 'description', content: 'La Web De Noticias De Barranquilla, Atlantico, Costa Caribe Colombiana, Colombia Y el Mundo' },
+        { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
 
         { name: 'format-detection', content: 'telephone=no' }
       ],

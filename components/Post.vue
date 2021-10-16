@@ -40,12 +40,14 @@
   display: block;
   margin-top: auto;
   margin-bottom: auto;
+
 }
 
 .card-imagen:hover {
   transition: opacity 1s cubic-bezier(0.39, 0.575, 0.565, 1);
   filter: saturate(180%);
-  cursor: grab;
+  cursor: pointer;
+
 }
 
 .card-body {

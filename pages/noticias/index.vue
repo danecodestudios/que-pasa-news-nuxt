@@ -31,29 +31,7 @@ import moment from 'moment'
 require('moment/locale/es-mx')
 
 export default {
-    head() {
-      return{
-         title: ' Que Pasa News Noticias',
-    htmlAttrs: {
-      lang: 'es'
-    },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'og:description', name: 'og:description', content: '' },
- 
-      { name: 'format-detection', content: 'telephone=no' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
-    script: [{
-      
-    }, {
-      
-    }],
-      }
-  },
+  
  
   components: {
     Post,
