@@ -21,7 +21,7 @@
             </div>
 
             <div class="card-body">
-              <h1 class="card-title title">{{ title }}</h1>
+              <h1 class="card-title title">{{ titulo }}</h1>
 
               <div v-html="contenido"></div>
             </div>
@@ -32,92 +32,69 @@
   </div>
 </template>
 <script>
-
-
-import axios from 'axios'
+// import axios from 'axios'
 import moment from 'moment'
 import marked from 'marked'
 require('moment/locale/es-mx')
 
 export default {
-      data() {
+  data() {
     return {
       posts: {},
-      title: '',
-      contenido: "",
+      titulo: '',
+      contenido: '',
       imagen: {},
-      categoria: "",
-      slug: "",
+      categoria: '',
+      slug: '',
       moment: moment,
     }
   },
 
- 
+  computed:{
+  },
 
 
- 
-  head() {
+
+  methods: {
+    async noticia() {
+
+  try {
+        const url = 'https://que-pasa-strapi.herokuapp.com/noticias/'
+        const res = await fetch(`${url}${this.$route.params.id}`)
+        const data = await res.json()
+        this.posts = data
+        this.titulo = data.titulo
+        this.contenido = marked(data.descripcion)
+        this.imagen = data.imagen[0].url
+        this.categoria = data.categorias[0].titulo
+        this.slug = data.slug
+        this.tags = data.titulo
+        console.log(data)
+  } catch (error) {
+    
+  }
+      
+   
+  
+    },
+  },
+
+  async mounted() {
+    this.noticia()
+  },
+
+    head() {
     return {
-     title: this.title, 
+      title: this.posts.titulo,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content:  this.categoria,
+          content: this.titulo,
         },
       ],
-
     }
   },
-
-      async mounted() {
-    try {
-      const url = "https://que-pasa-strapi.herokuapp.com/noticias/"
-      const res = await axios.get(
-        `${url}${this.$route.params.id}`
-          
-      )
-      this.posts = res.data
-      this.title = res.data.titulo
-      this.contenido = marked(res.data.descripcion)
-      this.imagen = res.data.imagen[0].url
-      this.categoria = res.data.categorias[0].titulo
-      this.slug = res.data.slug
-    } catch (error) {
-      err = error
-    }
-  },
-
-  // head() {
-  //   return{
-
-  //     title: this.posts.titulo,
-  //     meta:[
-  //       {
-  //         hid:'description',
-  //         name: 'description',
-  //         content:this.posts.titulo,
-
-  //       },
-
-  //     {
-  //       hid: 'og:title',
-  //       property: 'og:title',
-  //       content: this.posts.titulo
-  //     },
-
-  //     {
-  //       hid: 'og:image',
-  //       property: 'og:image',
-  //       content: this.imagen
-  //     },
-
-  //     ]
-
-  //   }
-  // },
-
-
 
 
 }
@@ -127,6 +104,35 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* STYLOS RELACIONADOS */
+
+.relacionado {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.card-relacionado {
+  margin: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.card-imagen {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  filter: saturate(120%);
+  position: relative;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* ============================= */
 
 .title {
   font-family: 'Merriweather Sans', sans-serif;

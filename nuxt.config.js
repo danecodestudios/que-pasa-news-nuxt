@@ -3,7 +3,7 @@ export default {
   head() {
     return {
       titleTemplate: ' %s || Que Pasa News ',
-      title: 'Que Pasa News || Aplicacion Web De Noticias ',
+
       htmlAttrs: {
         lang: 'es'
       },

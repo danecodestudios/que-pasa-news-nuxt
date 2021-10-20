@@ -23,10 +23,18 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <NuxtLink class="nav-link" aria-current="page" to="/"
-                ><i class="fab fa-neos text-white"></i> INICIO </NuxtLink
+                ><i class="fas fa-home text-white"></i> INICIO </NuxtLink
               >
             </li>
 
+             <li class="nav-item" v-for="categoria of categorias.slice(0,7)" :key="categoria.id">
+           
+                 <a class="nav-link" href="#">{{categoria.titulo}}</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#"> <i class="fas fa-angle-right text-white"></i></a>
+            </li>
      
           </ul>
         </div>
@@ -68,7 +76,7 @@
   top: 0;
    border-top-right-radius: 100px;
    border-bottom-right-radius: 100px;
-   
+   border-bottom: 2px solid rgb(0, 204, 51);
 
 }
 
@@ -86,26 +94,27 @@
   }
 
 .navbar-style {
-  background: #380164;
-  box-shadow: -9px 3px 15px 5px rgba(48,1,87,0.28);
+  background: #34016e;
   width: 100%;
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
+  
 }
 
 .nav-link {
   color: white;
+  font-size: .9rem;
   font-weight: 600;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
 
 .nav-link {
-  color: #00ff55;
+  color: #00ff15;
 }
 
 .nav-link:hover {
-  color: #54ff04;
+  color: #02b629;
 }
 
 .nav-link:active {
@@ -477,17 +486,27 @@
 
 
 <script>
-
+import axios from 'axios'
 export default {
  
   data() {
     return {
       audio : null,
       pausa: false,
+      categorias:[],
     }
   },
     mounted() {
     this.$store.commit('initializeSound');
+  },
+
+  async mounted(){
+    try {
+      const resp = await axios.get('https://que-pasa-strapi.herokuapp.com/categorias')
+      this.categorias = resp.data
+    } catch (error) {
+      err= error
+    }
   },
   methods: {
     sonido() {
