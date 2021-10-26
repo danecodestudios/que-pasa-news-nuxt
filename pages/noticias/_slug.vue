@@ -12,9 +12,9 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-12 col-md-2"></div>
+        <div class="col-12 col-md-3"></div>
 
-        <div class="col-12 col-md-7">
+        <div class="col-12 col-md-6">
           <div class="container tarjeta">
             <div class="card-head">
               <div class="cat">{{ categoria }}</div>
@@ -71,7 +71,7 @@ export default {
   async mounted() {
         try {
        // ================= PETICION LISTA DE TODOS LOS POSTS  ==================================
-        const url = 'http://losmaster.xyz/wp-json/wp/v2/posts?slug='
+        const url = 'https://losmaster.xyz/wp-json/wp/v2/posts?slug='
         const res = await axios.get(`${url}${this.$route.params.slug}`)
         this.posts = res.data
 
@@ -82,7 +82,7 @@ export default {
 
     // ================= PETICION CATEGORIA  ==================================
       let _id = res.data[0].categories[0];
-      const resCategorias = await axios.get( `${'http://losmaster.xyz/wp-json/wp/v2/categories/'}${_id}`)
+      const resCategorias = await axios.get( `${'https://losmaster.xyz/wp-json/wp/v2/categories/'}${_id}`)
       this.categoria = resCategorias.data.name
 
         console.log(this.categoria)
@@ -127,7 +127,7 @@ export default {
 
 .title {
   font-family: 'Merriweather Sans', sans-serif;
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 900;
   margin-bottom: 50px;
   padding-top: 60px;
@@ -150,7 +150,7 @@ export default {
 .img_posts {
   width: 100% !important;
   max-height: 800px;
-  border-radius: 20px;
+  border-radius: 2px;
 }
 .cat {
   background-color: #250167;

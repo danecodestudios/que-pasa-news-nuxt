@@ -834,7 +834,7 @@ export default {
   async mounted() {
     try {
       const res = await axios.get(
-        'http://losmaster.xyz/index.php/wp-json/wp/v2/destacados'
+        'https://losmaster.xyz/index.php/wp-json/wp/v2/destacados'
       )
 
       this.destacados = res.data

@@ -47,7 +47,7 @@ export default {
   async mounted() {
     try {
 // ================= PETICION LISTA DE TODOS LOS POSTS  ==================================
-      const res = await axios.get('http://losmaster.xyz/wp-json/wp/v2/posts')
+      const res = await axios.get('https://losmaster.xyz/wp-json/wp/v2/posts')
       this.posts = res.data
  
 
