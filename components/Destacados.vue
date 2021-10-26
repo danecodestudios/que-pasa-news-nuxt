@@ -2,59 +2,59 @@
   <div class="padre">
     <div class="container-fluid">
       <div class="row content-0">
-        <div class="col-12 col-md-7 col-lg-8 col-xl-8">
-          <NuxtLink class="a" :to="'/primicia/' + idUno">
+        <div class="col-12 col-md-7 col-lg-8 col-xl-8" >
+          <NuxtLink class="a" :to="'/primicia/' ">
             <img
               class="fila-0"
-              :src="imagenCero"
+              :src="imagenUno "
               alt="QUE PASA NOTICIAS || NEWS BARRANQUILLA, ATLANTICO, CARTAGENA, BOLIVAR, CARIBE, COLOMBIA Y EL MUNDO NEWS "
             />
 
             <div class="box-titulo">
               <span class="hour-0">
                 <i class="fas fa-history"></i> &nbsp; Hace :
-                {{ moment(primicia.published_at).fromNow('es-us') }}</span
+                {{ moment(destacados.date_gmt).fromNow('es-us') }}</span
               >
-              <h1 class="primicia-titulo">{{ primicia.titulo }}</h1>
+              <h1 class="primicia-titulo">{{tituloUno}}</h1>
             </div>
           </NuxtLink>
         </div>
 
         <div class="col-12 col-md-5 col-lg-4 col-xl-4">
           <div class="row content-1">
-            <NuxtLink :to="'/primicia/primicias/destacado/' + idDos">
+            <NuxtLink :to="'/primicia/primicias/destacado/' ">
               <div class="cal">
                 <img
                   class="fila-1"
-                  :src="imagenUno"
+                  :src="imagenDos"
                   alt="QUE PASA NOTICIAS || NEWS BARRANQUILLA, ATLANTICO, CARTAGENA, BOLIVAR, CARIBE, COLOMBIA Y EL MUNDO NEWS"
                 />
               </div>
               <div class="box-titulo-1">
                 <span class="hour-1">
                   <i class="fas fa-history"></i> &nbsp; Hace :{{
-                    moment(primiciasUno.published_at).fromNow('es-us')
+                    moment(destacados.date_gmt).fromNow('es-us')
                   }}</span
                 >
-                <h1 class="prim-titulo-1">{{ primiciasUno.titulo }}</h1>
+                <h1 class="prim-titulo-1">{{  tituloDos }}</h1>
               </div>
             </NuxtLink>
           </div>
 
           <div class="row">
-            <NuxtLink :to="'/primicia/primicias/destacados/' + idTres">
+            <NuxtLink :to="'/primicia/primicias/destacados/' ">
               <img
                 class="fila-2"
-                :src="imagenDos"
+                :src="imagenTres"
                 alt="QUE PASA NOTICIAS || NEWS BARRANQUILLA, ATLANTICO, CARTAGENA, BOLIVAR, CARIBE, COLOMBIA Y EL MUNDO NEWS"
               />
 
               <div class="box-titulo-2">
                 <span class="hour-2">
                   <i class="fas fa-history"></i> &nbsp; Hace :
-                  {{ moment(primiciasDos.published_at).fromNow('es-us') }}</span
+                  {{ moment(destacados.date_gmt).fromNow('es-us') }}</span
                 >
-                <h1 class="prim-titulo-2">{{ primiciasDos.titulo }}</h1>
+                <h1 class="prim-titulo-2">{{  tituloTres }}</h1>
               </div>
             </NuxtLink>
           </div>
@@ -78,7 +78,7 @@
 
 .fila-0 {
   display: block;
-  height: 510px;
+  max-height: 510px;
   filter: saturate(150%);
   background: rgba(0, 0, 0, 0.9) none !important;
   background: none, linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0)) !important;
@@ -816,15 +816,17 @@ export default {
 
   data() {
     return {
-      primicia: {},
-      primiciasUno: {},
-      primiciasDos: {},
-      idUno: {},
-      idDos: {},
-      idTres: {},
-      imagenCero: {},
-      imagenUno: {},
-      imagenDos: {},
+
+      destacados:[],  
+    
+      tituloUno:'',
+      tituloDos:'',
+      tituloTres:'',
+
+
+      imagenUno:'',
+      imagenDos:'',
+      imagenTres:'',
       moment: moment,
     }
   },
@@ -832,17 +834,21 @@ export default {
   async mounted() {
     try {
       const res = await axios.get(
-        'https://que-pasa-strapi.herokuapp.com/primicias'
+        'http://losmaster.xyz/index.php/wp-json/wp/v2/destacados'
       )
-      this.primicia = res.data.destacado
-      this.idUno = res.data.destacado.id
-      this.idDos = res.data.destacados[0].id
-      this.idTres = res.data.destacados[1].id
-      this.primiciasUno = res.data.destacados[0]
-      this.primiciasDos = res.data.destacados[1]
-      this.imagenCero = res.data.destacado.imagen[0].url
-      this.imagenUno = res.data.destacados[0].imagen[0].url
-      this.imagenDos = res.data.destacados[1].imagen[0].url
+
+      this.destacados = res.data
+
+      this.tituloUno = res.data[0].title.rendered
+      this.tituloDos = res.data[1].title.rendered
+      this.tituloTres = res.data[2].title.rendered
+
+      this.imagenUno = res.data[0].one_call.featured_list.source_url
+      this.imagenDos = res.data[1].one_call.featured_list.source_url
+      this.imagenTres = res.data[2].one_call.featured_list.source_url
+      console.log(this.destacadoUno)
+  
+
     } catch (error) {
       err = error
     }

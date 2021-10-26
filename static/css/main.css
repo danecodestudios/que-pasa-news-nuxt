@@ -10,10 +10,47 @@ img{
     width: 100%;
 }
 
+figure{
+     width: 100%;
+}
+
 p{
     font-size: 17px/24px ;
     font-family: 'Merriweather Sans';
-    font-weight: 400;
+    /* font-weight: 400; */
+    margin: 0 0 20px 0;
+    letter-spacing: 0.8px;
  
 }
+
+
+.has-drop-cap{
+    text-align: start;
+    
+}
+
+.has-drop-cap:first-letter{
+    font-size: 3.5rem;
+}
+
+.has-inline-color{
+    font-weight: 900;
+    text-align: start;
+    
+  }
+
+  .wp-block-quote{
+      font-family: 'Merriweather Sans';
+      font-size: 1.2rem;
+      font-weight: lighter;
+      quotes: "„" "“" "‚" "‘";
+      
+      
+  }
+
+  figcaption{
+    font-family: 'Merriweather Sans';
+    font-weight: 200;
+    font-size: 0.8rem;
+  }
 

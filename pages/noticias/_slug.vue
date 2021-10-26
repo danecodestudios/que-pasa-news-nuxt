@@ -2,101 +2,92 @@
   <div class="blog-post bb">
     <div class="container imagen-caja">
       <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-12 col-md-8">
+        <div class="col-md-1"></div>
+        <div class="col-12 col-md-10">
           <img class="img_posts" :src="imagen" alt="" />
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-1"></div>
       </div>
     </div>
 
     <div class="container">
       <div class="row">
-        <div class="col-12 col-md-3"></div>
+        <div class="col-12 col-md-2"></div>
 
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-7">
           <div class="container tarjeta">
             <div class="card-head">
               <div class="cat">{{ categoria }}</div>
+              <h1 class="title">{{ titulo }}</h1>
             </div>
 
             <div class="card-body">
-              <h1 class="card-title title">{{ titulo }}</h1>
-
               <div v-html="contenido"></div>
             </div>
           </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-// import axios from 'axios'
+import axios from 'axios'
 import moment from 'moment'
-import marked from 'marked'
 require('moment/locale/es-mx')
 
 export default {
   data() {
     return {
       posts: {},
+      imagen: '',
       titulo: '',
       contenido: '',
-      imagen: {},
-      categoria: '',
-      slug: '',
+      categoria:'',
       moment: moment,
     }
   },
 
-  computed:{
-  },
-
-
-
-  methods: {
-    async noticia() {
-
-  try {
-        const url = 'https://que-pasa-strapi.herokuapp.com/noticias/'
-        const res = await fetch(`${url}${this.$route.params.id}`)
-        const data = await res.json()
-        this.posts = data
-        this.titulo = data.titulo
-        this.contenido = marked(data.descripcion)
-        this.imagen = data.imagen[0].url
-        this.categoria = data.categorias[0].titulo
-        this.slug = data.slug
-        this.tags = data.titulo
-        console.log(data)
-  } catch (error) {
-    
-  }
-      
-   
-  
-    },
-  },
-
-  async mounted() {
-    this.noticia()
-  },
-
-    head() {
+  head() {
     return {
-      title: this.posts.titulo,
+      title: this.titulo,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.titulo,
+          content: 'Que Pasa news',
         },
       ],
     }
   },
 
+  computed: {},
 
+  
+
+  async mounted() {
+        try {
+       // ================= PETICION LISTA DE TODOS LOS POSTS  ==================================
+        const url = 'http://losmaster.xyz/wp-json/wp/v2/posts?slug='
+        const res = await axios.get(`${url}${this.$route.params.slug}`)
+        this.posts = res.data
+
+      // =======================================================================
+        this.imagen = res.data[0].one_call.featured_list.source_url
+        this.titulo = res.data[0].title.rendered
+        this.contenido = res.data[0].content.rendered
+
+    // ================= PETICION CATEGORIA  ==================================
+      let _id = res.data[0].categories[0];
+      const resCategorias = await axios.get( `${'http://losmaster.xyz/wp-json/wp/v2/categories/'}${_id}`)
+      this.categoria = resCategorias.data.name
+
+        console.log(this.categoria)
+      } catch (error) {}
+  },
 }
 </script>
 
@@ -136,11 +127,12 @@ export default {
 
 .title {
   font-family: 'Merriweather Sans', sans-serif;
-  font-size: 40px;
+  font-size: 3rem;
   font-weight: 900;
   margin-bottom: 50px;
-  margin-top: 30px;
-  text-align: center;
+  padding-top: 60px;
+  text-align: initial;
+  width: 100%;
 }
 .imagen-caja {
   margin-top: 25px;

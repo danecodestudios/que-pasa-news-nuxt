@@ -27,10 +27,10 @@
               >
             </li>
 
-             <li class="nav-item" v-for="categoria of categorias.slice(0,7)" :key="categoria.id">
+             <!-- <li class="nav-item" v-for="categoria of categorias.slice(0,7)" :key="categoria.id">
            
                  <a class="nav-link" href="#">{{categoria.titulo}}</a>
-            </li>
+            </li> -->
 
             <li class="nav-item">
               <a class="nav-link" href="#"> <i class="fas fa-angle-right text-white"></i></a>
@@ -500,14 +500,14 @@ export default {
     this.$store.commit('initializeSound');
   },
 
-  async mounted(){
-    try {
-      const resp = await axios.get('https://que-pasa-strapi.herokuapp.com/categorias')
-      this.categorias = resp.data
-    } catch (error) {
-      err= error
-    }
-  },
+  // async mounted(){
+  //   try {
+  //     const resp = await axios.get('https://que-pasa-strapi.herokuapp.com/categorias')
+  //     this.categorias = resp.data
+  //   } catch (error) {
+  //     err= error
+  //   }
+  // },
   methods: {
     sonido() {
 

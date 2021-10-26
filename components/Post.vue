@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtLink :to="'/noticias/' + id">
+    <NuxtLink :to="'/noticias/' + slug">
       <div class="card">
         <img :src="imagen" class="card-img-top card-imagen" :alt="titulo" />
         <div class="card-body">
