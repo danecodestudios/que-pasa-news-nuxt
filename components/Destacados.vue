@@ -409,7 +409,7 @@
     top: -258px;
     background: rgba(0, 0, 0, 0.829) none !important;
     background: none,
-      linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.801)) !important;
   }
 
   .hour-2 {
@@ -834,7 +834,7 @@ export default {
   async mounted() {
     try {
       const res = await axios.get(
-        'https://losmaster.xyz/index.php/wp-json/wp/v2/destacados'
+        'https://losmaster.xyz/wp-json/wp/v2/destacados'
       )
 
       this.destacados = res.data
