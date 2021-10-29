@@ -127,7 +127,7 @@ export default {
 
 .title {
   font-family: 'Merriweather Sans', sans-serif;
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: 900;
   margin-bottom: 50px;
   padding-top: 60px;
@@ -149,7 +149,7 @@ export default {
 }
 .img_posts {
   width: 100% !important;
-  max-height: 800px;
+  max-height: 700px;
   border-radius: 2px;
 }
 .cat {

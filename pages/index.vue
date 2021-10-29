@@ -8,17 +8,17 @@
       <Destacados />
     </div>
 
-    <div class="noticias">
+    <v-container class="noticias">
       <Noticias />
-    </div>
+    </v-container>
   </div>
 </template>
 
 <style scoped>
-.noticias{
+/* .noticias{
   position: relative;
   top: -150px;
-}
+} */
 </style>
 
 <script>

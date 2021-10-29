@@ -4,7 +4,7 @@
       <div class="card">
         <img :src="imagen" class="card-img-top card-imagen" :alt="titulo" />
         <div class="card-body">
-             <span class = "tag "> {{categoria}} </span> 
+             <!-- <span class = "tag "> {{categoria}} </span>  -->
           <h5 class="card-title">{{ titulo }}</h5>
         </div>
         <div class="card-footer">

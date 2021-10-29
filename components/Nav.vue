@@ -23,19 +23,14 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <NuxtLink class="nav-link" aria-current="page" to="/"
-                ><i class="fas fa-home text-white"></i> INICIO </NuxtLink
-              >
+                ><i class="fas fa-home text-white"></i> INICIO
+              </NuxtLink>
             </li>
-
-             <!-- <li class="nav-item" v-for="categoria of categorias.slice(0,7)" :key="categoria.id">
-           
-                 <a class="nav-link" href="#">{{categoria.titulo}}</a>
-            </li> -->
-
             <li class="nav-item">
-              <a class="nav-link" href="#"> <i class="fas fa-angle-right text-white"></i></a>
+              <a class="nav-link" href="#">
+                <i class="fas fa-angle-right text-white"></i
+              ></a>
             </li>
-     
           </ul>
         </div>
       </div>
@@ -60,24 +55,21 @@
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,300&display=swap');
-
 @import url('https://fonts.googleapis.com/css2? family = Work + Sans: ital, wght @ 1300 & display = swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,900&family=Rubik:ital,wght@0,400;0,800;0,900;1,800;1,900&display=swap');
 
 .header {
   display: grid;
   grid-template-columns: 20% 60% 20%;
   border: none;
-  background: linear-gradient(90deg, #360258 5%, #360258d5 30% , #360258 15% );
+  background: linear-gradient(90deg, #360258 5%, #360258d5 30%, #360258 15%);
   position: fixed;
   width: 100%;
   z-index: 20;
   top: 0;
-   border-top-right-radius: 100px;
-   border-bottom-right-radius: 100px;
-   border-bottom: 2px solid rgb(0, 204, 51);
-
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-bottom: 2px solid rgb(0, 204, 51);
 }
 
 .logo {
@@ -85,25 +77,23 @@
   justify-content: center;
   align-items: center;
   border-radius: 5rem;
- 
 }
 
 .text-logo {
-    width: 100%;
-    height: 60px;
-  }
+  width: 100%;
+  height: 60px;
+}
 
 .navbar-style {
   background: #34016e;
   width: 100%;
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
-  
 }
 
 .nav-link {
   color: white;
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
@@ -125,7 +115,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(190deg, #04ec0f 0,  #04ec0f 0, #04ec0f);
+  background: linear-gradient(190deg, #04ec0f 0, #04ec0f 0, #04ec0f);
   border-radius: 100px 100px / 120px;
   z-index: 20;
   top: 0;
@@ -316,7 +306,7 @@
     margin-top: 20px;
     margin-left: 5px;
     color: black;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     font-weight: 900;
   }
@@ -327,7 +317,7 @@
     font-size: 12px;
     margin-bottom: 0;
     color: black;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     font-weight: 900;
     text-transform: uppercase;
@@ -436,7 +426,7 @@
     color: white;
     font-weight: 600;
     text-align: center;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 13px;
   }
 
@@ -480,24 +470,21 @@
     height: 50px;
   }
 }
-
-
 </style>
 
 
 <script>
-import axios from 'axios'
+
 export default {
- 
   data() {
     return {
-      audio : null,
+      audio: null,
       pausa: false,
-      categorias:[],
+      categorias: [],
     }
   },
-    mounted() {
-    this.$store.commit('initializeSound');
+  mounted() {
+    this.$store.commit('initializeSound')
   },
 
   // async mounted(){
@@ -510,10 +497,8 @@ export default {
   // },
   methods: {
     sonido() {
-
-   
       if (this.pausa == false || this.isSoundEnabled) {
-        this.audio = new Audio("http://stream.zeno.fm/5m7yn6bxe48uv")
+        this.audio = new Audio('http://stream.zeno.fm/5m7yn6bxe48uv')
         this.audio.play()
         this.pausa = true
       } else {
@@ -522,10 +507,10 @@ export default {
       }
     },
   },
-computed: {
+  computed: {
     isSoundEnabled() {
-      return this.$store.state.isSoundEnabled;
+      return this.$store.state.isSoundEnabled
     },
-  }
+  },
 }
 </script>
